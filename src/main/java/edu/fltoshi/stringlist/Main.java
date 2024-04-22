@@ -1,11 +1,13 @@
 package edu.fltoshi.stringlist;
 
+import edu.fltoshi.stringlist.listString.StringListing;
+
 public class Main {
     public static void main(String[] args) {
+        StringListing arr = new StringListing(10);
 
-        StringListC stringA = new StringListC();
-        stringA.add(0,"АБОБА");
-
-        System.out.println(stringA.size());
+        arr.add("амогус");
+        arr.add("ис");
+        arr.add("сус");
     }
 }

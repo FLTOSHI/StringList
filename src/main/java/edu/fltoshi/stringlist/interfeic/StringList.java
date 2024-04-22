@@ -1,4 +1,4 @@
-package edu.fltoshi.stringlist;
+package edu.fltoshi.stringlist.interfeic;
 
 public interface StringList {
 

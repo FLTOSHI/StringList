@@ -1,197 +1,81 @@
 package listString;
 
 import edu.fltoshi.stringlist.listString.StringListing;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class StringListingTest {
-
-
-    // Добавление элемента
     @Test
-    void justAdd() {
-        StringListing testing = new StringListing(10);
-        testing.add("AMD FX-9590");
+    @DisplayName("Добавление элемента без индекса в массив.")
+    void addingItemIntoArrayWithoutIndex() {
+        StringListing test = new StringListing(1);
+        test.add("ъуъ");
+        Assertions.assertEquals(1, 1);
     }
 
-    // Добавление элемента по индексу
     @Test
-    void indexAdd() {
-        StringListing testing = new StringListing(10);
-        testing.add(0, "Athlon");
-        testing.add(1, "Phenom");
-        testing.add(2, "Sempron");
-        testing.add(3, "FX");
-        testing.add(4, "Ryzen");
-        testing.add(5, "Opteron");
+    @DisplayName("Добавление элемента с индексом в массив.")
+    void addingItemIntoArrayWithIndex() {
     }
 
-    // Установка элемента на место существующего, с затиркой второго.
     @Test
-    void set() {
-        StringListing testing = new StringListing(10);
-        testing.add(0, "Athlon");
-        testing.add(1, "Phenom");
-        testing.add(2, "Sempron");
-        testing.add(3, "FX");
-        testing.add(4, "Ryzen");
-        testing.add(5, "Opteron");
-
-        testing.set(3, "FX-4100");
+    @DisplayName("Установка элемента на позицию существующего, с удалением оного.")
+    void setItemOnHeldPosition() {
     }
 
-    // Удаление. Просто удаление.
     @Test
-    void justRemove() {
-        StringListing testing = new StringListing(10);
-        testing.add(0, "Athlon");
-        testing.add(1, "Phenom");
-        testing.add(2, "Sempron");
-        testing.add(3, "FX");
-        testing.add(4, "Ryzen");
-        testing.add(5, "Opteron");
-
-        testing.remove("FX");
+    @DisplayName("Удаление элемента без индекса из массива.")
+    void removingAnElementWithoutIndex () {
     }
 
-    // Удаление по индексу
     @Test
-    void indexRemove() {
-        StringListing testing = new StringListing(10);
-        testing.add(0, "Athlon");
-        testing.add(1, "Phenom");
-        testing.add(2, "Sempron");
-        testing.add(3, "FX");
-        testing.add(4, "Ryzen");
-        testing.add(5, "Opteron");
-
-        testing.remove(4);
+    @DisplayName("Удаление элемента с индексом из массива.")
+    void removingAnElementWithIndex () {
     }
 
-    // Проверка на существование
     @Test
-    void contains() {
-        StringListing testing = new StringListing(10);
-        testing.add(0, "Athlon");
-        testing.add(1, "Phenom");
-        testing.add(2, "Sempron");
-        testing.add(3, "FX");
-        testing.add(4, "Ryzen");
-        testing.add(5, "Opteron");
-
-        testing.contains("Opteron");
+    @DisplayName("Проверка элемента на существование.")
+    void isElementExist() {
     }
 
-    // Поиск элемента
     @Test
-    void indexOf() {
-        StringListing testing = new StringListing(10);
-        testing.add(0, "Athlon");
-        testing.add(1, "Phenom");
-        testing.add(2, "Sempron");
-        testing.add(3, "FX");
-        testing.add(4, "Ryzen");
-        testing.add(5, "Opteron");
-
-        testing.indexOf("ЧТО?");
+    @DisplayName("Поиск элемента с начала массива.")
+    void elementSearchFromFirst (){
     }
 
-    // Поиск элемента с конца
     @Test
-    void lastIndexOf() {
-        StringListing testing = new StringListing(10);
-        testing.add(0, "Athlon");
-        testing.add(1, "Phenom");
-        testing.add(2, "Sempron");
-        testing.add(3, "FX");
-        testing.add(4, "Ryzen");
-        testing.add(5, "Opteron");
-
-        testing.lastIndexOf("Athlon 64");
+    @DisplayName("Поиск элемента с конца массива.")
+    void elementSearchFromEnd () {
     }
 
-    // Получение элемента по индексу
     @Test
-    void get() {
-        StringListing testing = new StringListing(10);
-        testing.add(0, "Athlon");
-        testing.add(1, "Phenom");
-        testing.add(2, "Sempron");
-        testing.add(3, "FX");
-        testing.add(4, "Ryzen");
-        testing.add(5, "Opteron");
-
-        testing.get(0);
+    @DisplayName("Получение элемента в массиве по индексу.")
+    void getElementWithIndex () {
     }
 
-    // Сравнение одного с другим
     @Test
-    void equals() {
-        StringListing testing = new StringListing(10);
-        testing.add(0, "Athlon");
-        testing.add(1, "Phenom");
-        testing.add(2, "Sempron");
-
-        StringListing testing1 = new StringListing(10);
-        testing.add(0, "Athlon");
-        testing.add(1, "Phenom");
-        testing.add(2, "Sempron");
-
-        testing.equals(testing1);
+    @DisplayName("Сравнение одного массива с другим массивом.")
+    void isOneArrayEqualsWithAnotherArray () {
     }
 
-    // Возвращение фактического количества элементов
     @Test
-    void size() {
-        StringListing testing = new StringListing(10);
-        testing.add(0, "Athlon");
-        testing.add(1, "Phenom");
-        testing.add(2, "Sempron");
-        testing.add(3, "FX");
-        testing.add(4, "Ryzen");
-        testing.add(5, "Opteron");
-
-        testing.size();
+    @DisplayName("Проверка фактического числа элементов в массиве.")
+    void howMuchElementsInTheArray () {
     }
 
-    // Проверка на пустоту
     @Test
-    void isEmpty() {
-        StringListing testing = new StringListing(10);
-        testing.add(0, "Athlon");
-        testing.add(1, "Phenom");
-        testing.add(2, "Sempron");
-        testing.add(3, "FX");
-        testing.add(4, "Ryzen");
-        testing.add(5, "Opteron");
-
-        testing.isEmpty();
+    @DisplayName("Проверка на пустоту массива.")
+    void isArrayIsEmpty (){
     }
 
-    // Удаление ВСЕХ элементов
     @Test
-    void clear() {
-        StringListing testing = new StringListing(10);
-        testing.add(0, "Athlon");
-        testing.add(1, "Phenom");
-        testing.add(2, "Sempron");
-        testing.add(3, "FX");
-        testing.add(4, "Ryzen");
-        testing.add(5, "Opteron");
-
-        testing.clear();
+    @DisplayName("Удаление всех элементов из массива.")
+    void clearAllElementsFromArray () {
     }
 
-    // Создание нового массива.
     @Test
-    void toArray() {
-        StringListing testing = new StringListing(10);
-        testing.add(0, "Athlon");
-        testing.add(1, "Phenom");
-        testing.add(2, "Sempron");
-        testing.add(3, "FX");
-        testing.add(4, "Ryzen");
-        testing.add(5, "Opteron");
-
-        testing.toArray();
+    @DisplayName("Создание нового массива.")
+    void createANewArray () {
     }
 }

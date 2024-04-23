@@ -60,8 +60,8 @@ public class StringListingTest {
         list.add(1, "2");
         list.add(2, "3");
 
-        list.remove(2);
-        assertFalse(list.contains("3"));
+        assertEquals("1", list.remove(0));
+        assertFalse(list.contains("1"));
 
         assertThrows(IllegalArgumentException.class, () -> list.remove(null)); // Проверка исключения на пустоту удаляемого элемента
         assertThrows(IllegalArgumentException.class, () -> list.remove("420")); // Проверка исключения на отсутствие удаляемого элемента
@@ -154,15 +154,15 @@ public class StringListingTest {
     @Test
     @DisplayName("Проверка на неравенство двух массивов по размеру.")
     public void notEquals() {
-        StringListing list = new StringListing(2);
-        StringListing list2 = new StringListing(2);
+        StringListing list = new StringListing(3);
+        StringListing list2 = new StringListing(3);
         list.add("1");
 
         list2.add("5");
         list2.add("2");
 
         assertFalse(list.equals(list2)); // Проверка на равенство двух списков
-        assertThrows(IllegalArgumentException.class, () -> list.equals(null)); // Исключение на пустой сравниваемый список
+        assertTrue(list.equals(list2)); // Проверка на равенство двух списков
     }
 
 

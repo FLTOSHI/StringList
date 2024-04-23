@@ -28,17 +28,11 @@ public class StringListing implements StringList {
         return item;
     }
 
-    // Добавление элемента на определенную позицию списка.
+    // Добавление элемента с индексом (на определенную позицию списка).
     @Override
     public String add(int index, String item) {
-        if (item == null) {
-            throw new IllegalArgumentException("Добавляемый элемент не должен быть пустым.");
-        }
         if (index < 0 || index > size) {
             throw new ArrayIndexOutOfBoundsException("Индекс выходит за пределы массива.");
-        }
-        if (size == array.length) {
-            throw new ArrayIndexOutOfBoundsException("Невозможно добавить больше элементов, массив заполнен!");
         }
         for (int i = size; i > index; i--) {
             array[i] = array[i - 1];
@@ -62,7 +56,7 @@ public class StringListing implements StringList {
         return replacedItem;
     }
 
-    // Удаление элемента.
+    // Удаление элемента без индекса.
     @Override
     public String remove(String item) {
         if (item == null) {
